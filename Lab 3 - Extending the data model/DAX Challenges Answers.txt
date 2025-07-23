@@ -1,0 +1,16 @@
+Net Revenue for Midwest
+Midwest Net Revenue = CALCULATE(SUM(Sales[Net Revenue]),FILTER(Region,Region[Region Name]="Midwest")) 
+
+Ratio-to-parent
+http://www.powerpivotblog.com/powerpivot-calculate-ratio-to-parent/
+Percentage of Product Net Revenue = DIVIDE(SUM(Sales[Net Revenue]),CALCULATE(SUM(Sales[Net Revenue]),ALL('Product'[Product Name])))
+
+Growth between months
+Net Revenue Growth between Months = DIVIDE(SUM(Sales[Net Revenue])-[Net Revenue LM],[Net Revenue LM])
+
+YTD and QTD
+Net Revenue YTD = TOTALYTD(SUM(Sales[Net Revenue]),'Date'[Date]) 
+Net Revenue QTD = CALCULATE(SUM(Sales[Net Revenue]),DATESQTD('Date'[Date])) 
+
+Product RANK
+Product Rank = RANKX(ALL('Product'[Product Name]),[Net Profit],,DESC,Skip)

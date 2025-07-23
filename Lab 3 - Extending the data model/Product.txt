@@ -1,0 +1,7 @@
+Product =    
+DISTINCT(SELECTCOLUMNS(
+Sales,"Product SKU",Sales[Product SKU],
+"Product Name",Sales[Product Name],
+"Product Category",Sales[Product Category],
+"Product Item Group",Sales[Product Item Group],
+"Product Demographic",Sales[Product Demographic]))
